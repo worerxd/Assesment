@@ -15,12 +15,11 @@ const About = () => {
           <p className="about__description">
             I am a student at <b>MakeItReal</b> Bootcamp, currently i am
             studying to be a <i>Full Stacker JS developer </i> . I like to
-            discover new things about programming, i want to absorb all the
-            knowledge from my teachers. I like to dance salsa and bachata, play
-            some sports like futbol and play videogames like World of Warcraft,
-            Dota 2, New Word and more...
+            discover new things about programming and i would like to absorb all
+            the knowledge the teacher is giving me. I like to dance salsa and
+            bachata, play some sports like futbol and play videogames aswell
           </p>
-          <p className="about__things">Things i learn in this program:</p>
+          <p className="about__things">Things i learned in this program:</p>
           <ul className="about__list">
             <li>Work with a team</li>
             <li>Do research to solve problems</li>
