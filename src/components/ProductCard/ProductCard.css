@@ -1,0 +1,135 @@
+.card {
+  box-shadow: 0 0 10px 2px gray;
+  border-radius: 20px;
+  min-width: 20rem;
+  display: flex;
+  margin-bottom: 2rem;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.card__img {
+  width: 100%;
+  height: 16rem;
+  object-fit: fill;
+}
+
+.card__category {
+  color: #ffffff;
+  background-color: black;
+  width: fit-content;
+  padding: 0.5rem;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+}
+
+.card__body {
+  margin: 1rem;
+}
+
+.card__rating-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.card__price {
+  margin-right: 1rem;
+  color: gray;
+  font-size: 1.2rem;
+  margin-top: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.card__price::before {
+  content: '$';
+}
+
+.card__rating-container {
+  display: flex;
+}
+
+.card__rating-number {
+  padding: 5px;
+  background-color: black;
+  color: white;
+  border-radius: 5px;
+  font-weight: 500;
+  margin-left: 0.5rem;
+  font-size: 0.8rem;
+}
+
+.card__header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: space-around;
+}
+
+.card__title {
+  line-height: 1.4rem;
+  margin-bottom: 0.5rem;
+  color: gray;
+}
+
+.card__btn {
+  border: none;
+  border-top: 1px solid #653ecd;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.card__btn--disabled {
+  border: none;
+  border-top: 1px solid #653ecd;
+  background-color: transparent;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  width: 100%;
+  padding-top: 1rem;
+  margin-top: 1rem;
+  cursor: not-allowed;
+}
+
+.card__btn:hover {
+  color: #0088a9;
+}
+
+.card__timer {
+  font-size: 1rem;
+  text-align: end;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 600px) {
+  .card {
+    flex-direction: column;
+
+    min-width: 20rem;
+    position: relative;
+  }
+
+  .card__img {
+    width: 100%;
+    height: 15rem;
+  }
+  .card__timer {
+    margin-bottom: 3rem;
+  }
+
+  .card__btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 0;
+    text-align: center;
+  }
+}

@@ -1,0 +1,96 @@
+.about__container {
+  width: 80%;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin: 2rem auto;
+  justify-content: center;
+}
+
+.about__image {
+  width: 100%;
+  height: 18rem;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+}
+
+.about__name {
+  margin-bottom: 1.5rem;
+}
+
+.about__description {
+  font-size: 1rem;
+  text-align: justify;
+  margin-bottom: 1rem;
+}
+
+.about__span {
+  font-weight: bold;
+}
+
+.about__things {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.about__list {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.about__list > li {
+  list-style-type: none;
+}
+
+.about__email,
+.about__github {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.email__icon,
+.github__icon {
+  width: 1.2rem;
+  margin-right: 1rem;
+}
+
+@media (min-width: 680px) {
+  .about__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+  .about__image {
+    height: 100%;
+  }
+
+  .about__name {
+    font-size: 1.5rem;
+  }
+
+  .about__description {
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+  }
+
+  .about__list > li {
+    font-size: 0.9rem;
+  }
+
+  .about__email,
+  .about__github {
+    justify-content: end;
+  }
+}
+
+@media (min-width: 800px) {
+  .about__container {
+    max-width: 800px;
+  }
+
+  .about__email,
+  .about__github {
+    justify-content: end;
+  }
+}
