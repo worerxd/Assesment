@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Rating } from 'react-simple-star-rating';
+import Spinner from '../../components/Spinner/Spinner';
 import { useProductContext } from '../../context/Products/ProductProvider';
 
 import './Detail.css';
@@ -55,26 +56,43 @@ const Detail = () => {
               </div>
             </div>
             <p className="product-detail__description">{product.description}</p>
-            <p className="product-detail__timer">
-              Time left: {timerMinutes < 10 ? `0${timerMinutes}` : timerMinutes}
-              :{timerSeconds < 10 ? `0${timerSeconds}` : timerSeconds}
-            </p>
-            {timerMinutes === 0 && timerSeconds === 0 ? (
-              <button
-                type="button"
-                className="product-detail__button--disabled"
-                disabled
-              >
-                Add To Cart
-              </button>
+            {/* {timerSeconds === 0 && timerMinutes === 0 ? (
+              <p className="product-detail__timer--expired">Time Expired</p>
             ) : (
-              <button type="button" className="product-detail__button">
-                Add To Cart
-              </button>
+              <p className="product-detail__timer">
+                Time left:{' '}
+                {timerMinutes < 10 ? `0${timerMinutes}` : timerMinutes}:
+                {timerSeconds < 10 ? `0${timerSeconds}` : timerSeconds}
+              </p>
+            )} */}
+            {timerMinutes === 0 && timerSeconds === 0 ? (
+              <div>
+                <p className="product-detail__timer--expired">Time Expired</p>
+                <button
+                  type="button"
+                  className="product-detail__button--disabled"
+                  disabled
+                >
+                  Add To Cart
+                </button>
+              </div>
+            ) : (
+              <div>
+                <p className="product-detail__timer">
+                  Time left:{' '}
+                  {timerMinutes < 10 ? `0${timerMinutes}` : timerMinutes}:
+                  {timerSeconds < 10 ? `0${timerSeconds}` : timerSeconds}
+                </p>
+                <button type="button" className="product-detail__button">
+                  Add To Cart
+                </button>
+              </div>
             )}
           </div>
         </div>
-      ) : null}
+      ) : (
+        <Spinner customText="Loading" />
+      )}
     </div>
   );
 };

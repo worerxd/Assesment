@@ -71,6 +71,7 @@
   line-height: 1.4rem;
   margin-bottom: 0.5rem;
   color: gray;
+  text-overflow: ellipsis;
 }
 
 .card__btn {
@@ -110,6 +111,14 @@
   font-weight: bold;
 }
 
+.card__timer--expired {
+  font-size: 1rem;
+  text-align: end;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #d34821;
+}
+
 @media screen and (min-width: 600px) {
   .card {
     flex-direction: column;
@@ -125,8 +134,18 @@
   .card__timer {
     margin-bottom: 3rem;
   }
+  .card__timer--expired {
+    margin-bottom: 3rem;
+  }
 
   .card__btn {
+    position: absolute;
+    bottom: 1rem;
+    right: 0;
+    text-align: center;
+  }
+
+  .card__btn--disabled {
     position: absolute;
     bottom: 1rem;
     right: 0;

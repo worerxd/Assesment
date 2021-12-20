@@ -76,6 +76,14 @@
   font-weight: bold;
 }
 
+.product-detail__timer--expired {
+  font-size: 1rem;
+  text-align: end;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #d34821;
+}
+
 .product-detail__button {
   background-color: #653ecd;
   color: white;

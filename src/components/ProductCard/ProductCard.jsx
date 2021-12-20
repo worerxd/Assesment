@@ -26,7 +26,11 @@ const ProductCard = ({ product }) => {
       <img className="card__img" src={product.image} alt="" />
       <div className="card__body">
         <h4 className="card__category">{product.category.toUpperCase()}</h4>
-        <h3 className="card__title">{product.title} </h3>
+        <h3 className="card__title">
+          {product.title.length < 60
+            ? product.title
+            : `${product.title.substring(0, 60)} ...`}
+        </h3>
         <div className="card__rating-price">
           <h2 className="card__price">{product.price}</h2>
           <div className="card__rating-container">
@@ -38,27 +42,29 @@ const ProductCard = ({ product }) => {
             <p className="card__rating-number">{product.rating.rate}</p>
           </div>
         </div>
-        {product.countDownTimer ? (
-          <p className="card__timer">
-            Time left: {timerMinutes < 10 ? `0${timerMinutes}` : timerMinutes}:
-            {timerSeconds < 10 ? `0${timerSeconds}` : timerSeconds}
-          </p>
-        ) : (
-          ''
-        )}
         {timerMinutes === 0 && timerSeconds === 0 ? (
-          <button
-            className="card__btn--disabled"
-            type="button"
-            disabled
-            onClick={handleClick}
-          >
-            Go to Detail
-          </button>
+          <div>
+            <p className="card__timer--expired">Time Expired</p>
+            <button
+              className="card__btn--disabled"
+              type="button"
+              disabled
+              onClick={handleClick}
+            >
+              Go to Detail
+            </button>
+          </div>
         ) : (
-          <button className="card__btn" type="button" onClick={handleClick}>
-            Go to Detail
-          </button>
+          <div>
+            <p className="card__timer">
+              Time left: {timerMinutes < 10 ? `0${timerMinutes}` : timerMinutes}
+              :{timerSeconds < 10 ? `0${timerSeconds}` : timerSeconds}
+            </p>
+
+            <button className="card__btn" type="button" onClick={handleClick}>
+              Go to Detail
+            </button>
+          </div>
         )}
       </div>
     </div>
