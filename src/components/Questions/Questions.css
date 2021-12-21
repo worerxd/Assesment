@@ -1,0 +1,35 @@
+.Questions__title {
+  text-align: center;
+}
+
+.Questions__container {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 85%;
+  margin: auto;
+  text-align: justify;
+}
+
+.Questions {
+  font-size: 0.9rem;
+  transform: scale(0.9);
+}
+
+.Questions__buttons {
+  background-color: #24252a;
+}
+
+@media (min-width: 750px) {
+  .Questions__container {
+    width: 75%;
+  }
+  .Questions {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 750px) {
+  .Questions__container {
+    width: 70%;
+  }
+}
