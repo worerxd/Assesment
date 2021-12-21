@@ -12,6 +12,8 @@ The project was build with:
 
 Some of the challenges i had was to add the timer globally so it will kepp the count down of the timer even when you enter at the detail's page. And the answer was to use Context.
 
+### `Note: If you want to reset the count down timer, you need to refresh the page.`
+
 # End Points
 
 | ROUTES      | RESULT                                                          |
